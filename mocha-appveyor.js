@@ -39,6 +39,11 @@ function AppVeyorReporter(runner) {
     requestJson.newClient(process.env.APPVEYOR_API_URL).post('api/tests/batch', tests, function(err, body, resp) {
 	  done = true;
       errData = err;
+	  console.log('mocha-appveyor-reporter DEBUG START');
+	  console.log(err);
+	  console.log(body);
+	  console.log(resp);
+	  console.log('mocha-appveyor-reporter DEBUG END');
     })
 	
 	deasync.loopWhile(function() {
